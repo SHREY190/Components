@@ -1,2 +1,2 @@
 # Components
-Common frontend components.
+Frontend components, animations and effects.
