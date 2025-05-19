@@ -1,0 +1,2 @@
+# Components
+Common frontend components.
