@@ -1,2 +1,2 @@
 # Components
-Frontend components, animations and effects.
+Frontend components, designs, animations and effects.
