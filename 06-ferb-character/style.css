@@ -1,6 +1,6 @@
 .container {
   width: 500px;
-  height: 500px;
+  height: 800px;
   background: #4c2e82;
   position: absolute;
   top: 50%;
@@ -9,20 +9,24 @@
   border-radius: 20px;
   box-shadow: 0 0 10px 12px #bbb;
 }
-
-.ferb {
-  height: 220px;
-  width: 60px;
-  background: #fce2c4;
-  border: 1px solid #ffa945;
-  position: relative;
+.wrapper {
+  position: absolute;
   top: 125px;
   left: 200px;
-  transform: rotate(5deg);
-  border-radius: 5px;
 }
 
-.ferb::before {
+.ferb {
+  width: 60px;
+  height: 220px;
+  background: #fce2c4;
+  border: 1px solid #ffa945;
+  border-radius: 5px;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  position: relative;
+  z-index: -1;
+}
+
+.wrapper::before {
   content: "";
   height: 40px;
   width: 60px;
@@ -39,15 +43,16 @@
   z-index: 5;
 }
 
-.ferb::after {
+.wrapper::after {
   content: "3";
   height: 15px;
   width: 10px;
   border-radius: 10px;
   background: #fce2c4;
   position: absolute;
-  right: -10px;
-  top: 85px;
+  padding: 2px;
+  right: -2px;
+  top: 80px;
   border-top: 1px solid #ffa945;
   border-right: 2px solid #ffa945;
   border-bottom: 1px solid #ffa945;
@@ -65,7 +70,7 @@
   border: 1px solid #000;
   top: 40px;
   left: -17px;
-  z-index: -1;
+  z-index: 1;
 }
 .eye1::before {
   content: "";
@@ -105,21 +110,53 @@
   width: 30px;
   height: 30px;
   background-color: #fce2c4;
-  clip-path: polygon(36% 0%, 0% 100%, 100% 100%);
+  /* clip-path: polygon(36% 0%, 0% 100%, 100% 100%); */
+  clip-path: polygon(
+    0% 100%,
+    100% 100%,
+    99% 1%,
+    79% 10%,
+    65% 19%,
+    56% 26%,
+    47% 33%,
+    39% 41%,
+    31% 49%,
+    24% 57%,
+    18% 64%,
+    12% 72%,
+    7% 80%,
+    3% 89%
+  );
   position: absolute;
   top: 140px;
-  left: -11px;
+  left: -5px;
   z-index: 2;
 }
 .mouth1 {
   width: 30px;
   height: 30px;
   background-color: #ffa945;
-  clip-path: polygon(36% 0%, 0% 100%, 100% 100%);
+  /* clip-path: polygon(36% 0%, 0% 100%, 100% 100%); */
+  clip-path: polygon(
+    0% 100%,
+    100% 100%,
+    99% 1%,
+    79% 10%,
+    65% 19%,
+    56% 26%,
+    47% 33%,
+    39% 41%,
+    31% 49%,
+    24% 57%,
+    18% 64%,
+    12% 72%,
+    7% 80%,
+    3% 89%
+  );
   position: absolute;
   border-radius: 5px;
   top: 141px;
-  left: -12px;
+  left: -6px;
   z-index: 1;
 }
 
@@ -132,50 +169,202 @@
 
 .hair div:nth-child(1) {
   height: 30px;
-  width: 100px;
+  width: 110px;
   position: absolute;
   border-top: 20px solid #008000;
-  top: -20px;
+  bottom: 220px;
   left: -30px;
   border-radius: 50px 40px 0 0;
   transform: rotate(30deg);
 }
 .hair div:nth-child(2) {
   height: 30px;
-  width: 100px;
+  width: 110px;
   position: absolute;
   border-top: 20px solid #008000;
-  top: -20px;
+  bottom: 230px;
   left: -30px;
   border-radius: 50px 40px 0 0;
-  transform: rotate(70deg);
+  transform: rotate(60deg);
 }
 .hair div:nth-child(3) {
   height: 30px;
-  width: 80px;
+  width: 90px;
   position: absolute;
   border-top: 20px solid #008000;
-  top: -40px;
+  bottom: 240px;
   left: -20px;
   border-radius: 50px 40px 0 0;
   transform: rotate(130deg);
 }
 .hair div:nth-child(4) {
   height: 30px;
-  width: 100px;
+  width: 110px;
   position: absolute;
   border-top: 20px solid #008000;
-  top: -10px;
+  bottom: 210px;
   left: -20px;
   border-radius: 50px 40px 0 0;
   transform: rotate(-10deg);
 }
 .hair div:nth-child(5) {
   height: 30px;
-  width: 100px;
+  width: 110px;
   position: absolute;
   border-top: 20px solid #008000;
-  top: -15px;
+  bottom: 215px;
   left: -30px;
   border-radius: 50px 40px 0 0;
+}
+
+.collar {
+  position: relative;
+  bottom: 22px;
+  left: -4px;
+  width: 70px;
+  height: 40px;
+  clip-path: polygon(0 0, 100% 0, 70% 35%, 50% 18%, 30% 36%);
+  background-color: #fff;
+}
+.collar1 {
+  position: absolute;
+  bottom: 4px;
+  left: -10px;
+  width: 82px;
+  height: 60px;
+  clip-path: polygon(0 0, 100% 0, 70% 35%, 50% 18%, 30% 36%);
+  background-color: #000;
+  z-index: -1;
+}
+.under-tshirt {
+  width: 200px;
+  height: 200px;
+  bottom: -138px;
+  left: -67px;
+  background-color: #fcf5c4;
+  position: absolute;
+  clip-path: polygon(
+    16% 16%,
+    16% 16%,
+    28% 7%,
+    39% 0,
+    61% 0,
+    72% 7%,
+    84% 15%,
+    84% 15%,
+    78% 22%,
+    64% 16%,
+    64% 44%,
+    36% 44%,
+    36% 16%,
+    22% 24%
+  );
+  z-index: -2;
+}
+
+.under-tshirt2 {
+  width: 210px;
+  height: 210px;
+  bottom: -146px;
+  left: -72px;
+  background-color: #000;
+  position: absolute;
+  clip-path: polygon(
+    16% 16%,
+    16% 16%,
+    28% 7%,
+    39% 0,
+    61% 0,
+    72% 7%,
+    84% 15%,
+    84% 15%,
+    78% 22%,
+    64% 16%,
+    64% 44%,
+    36% 44%,
+    36% 16%,
+    22% 24%
+  );
+  z-index: -3;
+}
+
+.over-pant {
+  width: 94px;
+  height: 250px;
+  bottom: -168px;
+  left: -14px;
+  position: absolute;
+  background-color: #4c2e82;
+  clip-path: polygon(
+    0 33%,
+    41% 33%,
+    50% 41%,
+    59% 33%,
+    100% 33%,
+    82% 47%,
+    82% 79%,
+    18% 79%,
+    18% 47%
+  );
+}
+
+.over-pant2 {
+  width: 100px;
+  height: 254px;
+  bottom: -169px;
+  left: -17px;
+  position: absolute;
+  background-color: #000;
+  clip-path: polygon(
+    0 33%,
+    41% 33%,
+    50% 41%,
+    59% 33%,
+    100% 33%,
+    82% 47%,
+    82% 79%,
+    18% 79%,
+    18% 47%
+  );
+  z-index: -1;
+}
+
+.over-pant3 {
+  width: 151px;
+  height: 126px;
+  position: absolute;
+  bottom: -240px;
+  left: -42px;
+  background-color: #4c2e82;
+  clip-path: polygon(
+    30% 0,
+    70% 0,
+    70% 20%,
+    67% 28%,
+    60% 33%,
+    50% 35%,
+    40% 33%,
+    33% 28%,
+    30% 20%
+  );
+}
+.over-pant4 {
+  width: 161px;
+  height: 128px;
+  position: absolute;
+  bottom: -244px;
+  left: -47px;
+  background-color: #000;
+  clip-path: polygon(
+    30% 0,
+    70% 0,
+    70% 20%,
+    67% 28%,
+    60% 33%,
+    50% 35%,
+    40% 33%,
+    33% 28%,
+    30% 20%
+  );
+  z-index: -1;
 }
